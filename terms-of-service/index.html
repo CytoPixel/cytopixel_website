@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — CytoPixel Software</title>
+<meta name="description" content="CytoPixel NimbusImage Terms of Service. Read the terms governing your use of the NimbusImage cloud-based image analysis platform.">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0C0E12;
+    --surface: #141820;
+    --card: #1A1F2A;
+    --accent: #3ECFB4;
+    --accent-hover: #2EB89E;
+    --accent-glow: rgba(62, 207, 180, 0.12);
+    --text: #E8ECF1;
+    --text-secondary: rgba(232, 236, 241, 0.55);
+    --border: rgba(255, 255, 255, 0.06);
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Sora', -apple-system, sans-serif;
+    --max-width: 1120px;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ─── NOISE OVERLAY ─── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0 clamp(24px, 4vw, 48px);
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(12, 14, 18, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.3s;
+  }
+
+  nav.scrolled {
+    background: rgba(12, 14, 18, 0.95);
+  }
+
+  .nav-logo {
+    text-decoration: none;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .nav-logo-mark {
+    width: 28px;
+    height: 28px;
+    background: var(--accent);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-logo-mark svg { width: 16px; height: 16px; }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 4px;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 1px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  /* ─── LEGAL CONTENT ─── */
+  .legal-page {
+    padding: 140px clamp(24px, 4vw, 48px) 100px;
+  }
+
+  .legal-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .legal-inner h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .legal-subtitle {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 400;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .legal-updated {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .legal-notice {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-bottom: 48px;
+    font-size: 0.85rem;
+    line-height: 1.8;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  .legal-inner h2 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-top: 48px;
+    margin-bottom: 16px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+  }
+
+  .legal-inner h2:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .legal-inner h3 {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 28px;
+    margin-bottom: 12px;
+    color: var(--accent);
+  }
+
+  .legal-inner p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.85;
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+
+  .legal-inner ul, .legal-inner ol {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.85;
+    font-weight: 300;
+    margin-bottom: 16px;
+    padding-left: 24px;
+  }
+
+  .legal-inner li {
+    margin-bottom: 8px;
+  }
+
+  .legal-inner .caps-text {
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  .legal-inner a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .legal-inner a:hover {
+    text-decoration: underline;
+  }
+
+  .legal-closing {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    font-style: italic;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    padding: 48px clamp(24px, 4vw, 48px);
+    border-top: 1px solid var(--border);
+    background: var(--bg);
+  }
+
+  .footer-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-brand {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.825rem;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--text); }
+
+  /* ─── REDUCED MOTION ─── */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+    html { scroll-behavior: auto; }
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: rgba(12, 14, 18, 0.97);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 24px;
+      gap: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-toggle { display: flex; }
+
+    .legal-notice {
+      padding: 20px 24px;
+    }
+
+    .footer-inner {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .footer-links { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="../assets/favicon-32.png" alt="" class="nav-logo-img" style="width:28px;height:28px;border-radius:6px;">
+    CytoPixel
+  </a>
+  <ul class="nav-links">
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/terms-of-service">Terms</a></li>
+    <li><a href="/privacy-policy">Privacy</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- LEGAL CONTENT -->
+<main class="legal-page">
+  <div class="legal-inner">
+
+    <h1>Per-product Terms of Service</h1>
+    <p class="legal-subtitle">CytoPixel NimbusImage Terms of Service</p>
+    <p class="legal-updated">Last Updated: September 9, 2024</p>
+
+    <div class="legal-notice">
+      PLEASE READ THE FOLLOWING TERMS OF SERVICE ("TERMS") CAREFULLY BEFORE USING THE CYTOPIXEL NIMBUSIMAGE PROGRAM ("PROGRAM"). USE OF THE PROGRAM WILL SIGNIFY YOUR AGREEMENT TO BE BOUND BY THESE TERMS. IF YOU DO NOT AGREE TO THESE TERMS, DO NOT USE THE PROGRAM.
+    </div>
+
+    <!-- Section 1 -->
+    <h2>1. Description of Program</h2>
+    <p>CytoPixel has developed NimbusImage, a web-based image analysis program for research purposes. These Terms govern your access to and use of the Program. Access to the features and functionality of this software-based product is delivered and made accessible via a SaaS (Software as a Service) model. By accessing the Program, Customer acknowledges to have read, understood, and agree to comply and be bound by these Terms. If you do not agree, you should discontinue use immediately.</p>
+
+    <!-- Section 2 -->
+    <h2>2. Grant of License</h2>
+    <p>Subject to the payment of applicable fees or on a limited, free, no-obligation trial basis, CytoPixel hereby grants to Customer a limited, non-exclusive, non-transferable right to access and use the Program as specified in each Service Order. The license is granted solely for Customer's internal research purposes and is subject to all restrictions and obligations set forth in these Terms. CytoPixel retains all right, title, and interest in and to the Program, including all intellectual property rights therein. Nothing in these Terms shall be construed as transferring any ownership rights to Customer.</p>
+    <p>The Customer may not sublicense, distribute, or provide access to the Program to any third party without CytoPixel's prior written consent. Any attempt to sublicense, assign, or transfer the rights granted herein without such consent shall be null and void.</p>
+
+    <!-- Section 3 -->
+    <h2>3. User Registration Obligations</h2>
+    <p>Each of the Customer's Authorized Users must provide true, accurate, current, and complete information as prompted by the registration process ("Registration Data") and maintain and promptly update the Registration Data to keep it true, accurate, current, and complete at all times.</p>
+    <p>Authorized Users must maintain the confidentiality and security of their login credentials and are solely responsible for all activities that occur under their accounts. Customer shall immediately notify CytoPixel of any unauthorized use of any Authorized User's account or any other breach of security known to Customer.</p>
+    <p>If any Authorized User provides, or CytoPixel has reasonable grounds to suspect that any Authorized User has provided, any Registration Data that is untrue, inaccurate, not current, or incomplete, CytoPixel may suspend or terminate the applicable Authorized User's account and refuse any and all current or future use of the Program by such Authorized User.</p>
+
+    <!-- Section 4 -->
+    <h2>4. Use Restrictions</h2>
+
+    <h3>4.1 Research Use Only</h3>
+    <p>The Program is intended for research use only. It may not be used for diagnostic, clinical, or any other non-research purposes. Customer acknowledges that the Program has not been validated or approved for clinical or diagnostic use and agrees not to use the Program in any manner that would constitute such use.</p>
+
+    <h3>4.2 No Patient Data</h3>
+    <p>Customer agrees not to upload, transmit, or otherwise make available any protected health information (PHI) as defined under the Health Insurance Portability and Accountability Act (HIPAA), or any personally identifiable information (PII) of patients or research subjects, to the Program. Customer is solely responsible for ensuring that all data uploaded to the Program is de-identified and compliant with all applicable privacy laws and regulations.</p>
+
+    <h3>4.3 General Use Restrictions</h3>
+    <p>Customer shall not, and shall not permit any Authorized User or third party to:</p>
+    <ol type="a">
+      <li>Copy, modify, adapt, translate, or create derivative works based on the Program or any component thereof;</li>
+      <li>Reverse engineer, disassemble, decompile, or otherwise attempt to derive the source code or underlying algorithms of the Program;</li>
+      <li>Rent, lease, loan, sell, sublicense, distribute, or otherwise transfer the Program or any rights therein to any third party;</li>
+      <li>Remove, alter, or obscure any proprietary notices, labels, or marks on the Program;</li>
+      <li>Use the Program to develop a competing product or service, or for any purpose that is competitive with CytoPixel's business;</li>
+      <li>Use the Program in any manner that violates any applicable law, regulation, or governmental order;</li>
+      <li>Transmit any viruses, worms, defects, Trojan horses, or any items of a destructive nature through the Program;</li>
+      <li>Use the Program to store or transmit material that infringes or misappropriates the intellectual property rights of any third party.</li>
+    </ol>
+
+    <h3>4.4 Compliance with Laws</h3>
+    <p>Customer shall comply with all applicable local, state, national, and international laws and regulations in connection with its use of the Program, including but not limited to export control laws, data privacy laws, and intellectual property laws.</p>
+
+    <h3>4.5 Monitoring of Use</h3>
+    <p>CytoPixel reserves the right to monitor Customer's use of the Program for the purpose of ensuring compliance with these Terms. CytoPixel may, in its sole discretion, suspend or terminate Customer's access to the Program if CytoPixel reasonably believes that Customer's use of the Program violates these Terms or any applicable law or regulation.</p>
+
+    <!-- Section 5 -->
+    <h2>5. Fees, Term and Payment</h2>
+
+    <h3>5.1 Fees</h3>
+    <p>Customer shall pay all fees specified in the applicable Service Order or pricing schedule. Fees are based on the level of access and usage selected by the Customer and are non-refundable except as expressly set forth in these Terms. CytoPixel reserves the right to modify its fees upon thirty (30) days' prior written notice to Customer, provided that such modified fees shall apply only to subsequent renewal terms.</p>
+
+    <h3>5.2 Subscription Term</h3>
+    <p>The initial subscription term shall be as specified in the applicable Service Order. Unless either party provides written notice of non-renewal at least thirty (30) days prior to the expiration of the then-current term, the subscription shall automatically renew for successive periods equal to the initial term, at the then-current fees.</p>
+
+    <h3>5.3 Payment Terms</h3>
+    <p>All fees are due and payable in accordance with the payment terms set forth in the applicable Service Order. If no payment terms are specified, all fees shall be due within thirty (30) days of the invoice date. Late payments shall accrue interest at the rate of one and one-half percent (1.5%) per month, or the maximum rate permitted by applicable law, whichever is less.</p>
+
+    <h3>5.4 Taxes</h3>
+    <p>All fees are exclusive of taxes. Customer shall be responsible for all applicable taxes, levies, and duties arising out of these Terms, excluding taxes based on CytoPixel's net income. If CytoPixel is required to collect or remit taxes on Customer's behalf, such taxes will be invoiced to Customer and Customer shall pay such taxes in addition to the applicable fees.</p>
+
+    <!-- Section 6 -->
+    <h2>6. Data Privacy and Security</h2>
+
+    <h3>6.1 Privacy and Security Measures</h3>
+    <p>CytoPixel shall implement and maintain commercially reasonable administrative, technical, and physical safeguards designed to protect the confidentiality, integrity, and availability of Customer Data stored within the Program. CytoPixel shall comply with its published Privacy Policy, which is incorporated herein by reference.</p>
+
+    <h3>6.2 Ownership of Customer Data</h3>
+    <p>Customer retains all right, title, and interest in and to all data, images, files, and other content uploaded to the Program by Customer or its Authorized Users ("Customer Data"). CytoPixel shall not access, use, or disclose Customer Data except as necessary to provide and maintain the Program, comply with applicable law, or as otherwise authorized by Customer in writing.</p>
+
+    <h3>6.3 Customer Data Access</h3>
+    <p>Customer may export or retrieve its Customer Data from the Program at any time during the term of the subscription. Upon termination or expiration of the subscription, CytoPixel shall, at Customer's request, make Customer Data available for export for a period of thirty (30) days. After such period, CytoPixel may delete Customer Data in accordance with its standard data retention policies.</p>
+
+    <h3>6.4 Breach Notification</h3>
+    <p>In the event that CytoPixel becomes aware of any unauthorized access to or disclosure of Customer Data ("Security Breach"), CytoPixel shall promptly notify Customer of the Security Breach, take commercially reasonable steps to mitigate the effects of the Security Breach, and cooperate with Customer in investigating and remediating the Security Breach. Such notification shall be made without unreasonable delay and in no event later than seventy-two (72) hours after CytoPixel becomes aware of the Security Breach.</p>
+
+    <!-- Section 7 -->
+    <h2>7. Disclaimer of Warranties</h2>
+    <p class="caps-text">THE PROGRAM IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. CYTOPIXEL DOES NOT WARRANT THAT THE PROGRAM WILL MEET CUSTOMER'S REQUIREMENTS, THAT THE OPERATION OF THE PROGRAM WILL BE UNINTERRUPTED OR ERROR-FREE, THAT DEFECTS IN THE PROGRAM WILL BE CORRECTED, OR THAT THE PROGRAM IS FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. CUSTOMER ASSUMES THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM. THE PROGRAM IS NOT INTENDED FOR USE IN CLINICAL OR DIAGNOSTIC SETTINGS, AND CYTOPIXEL DISCLAIMS ALL LIABILITY ARISING FROM ANY SUCH USE. NO ORAL OR WRITTEN INFORMATION OR ADVICE GIVEN BY CYTOPIXEL OR ITS AUTHORIZED REPRESENTATIVES SHALL CREATE A WARRANTY.</p>
+
+    <!-- Section 8 -->
+    <h2>8. Limitation of Liability</h2>
+
+    <h3>8.1 Limitation of Damages</h3>
+    <p class="caps-text">TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL CYTOPIXEL, ITS AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, OR LICENSORS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO DAMAGES FOR LOSS OF PROFITS, GOODWILL, DATA, USE, OR OTHER INTANGIBLE LOSSES, ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OR THE USE OF OR INABILITY TO USE THE PROGRAM, WHETHER BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY, OR ANY OTHER LEGAL THEORY, EVEN IF CYTOPIXEL HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+
+    <h3>8.2 Cap on Liability</h3>
+    <p class="caps-text">TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, CYTOPIXEL'S TOTAL CUMULATIVE LIABILITY ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OR THE USE OF THE PROGRAM SHALL NOT EXCEED THE TOTAL AMOUNT OF FEES PAID BY CUSTOMER TO CYTOPIXEL DURING THE TWELVE (12) MONTH PERIOD IMMEDIATELY PRECEDING THE EVENT GIVING RISE TO THE CLAIM. THE FOREGOING LIMITATIONS SHALL APPLY NOTWITHSTANDING ANY FAILURE OF ESSENTIAL PURPOSE OF ANY LIMITED REMEDY AND SHALL APPLY EVEN IF A PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+
+    <!-- Section 9 -->
+    <h2>9. Indemnification</h2>
+    <p>Customer agrees to indemnify, defend, and hold harmless CytoPixel, its affiliates, officers, directors, employees, agents, and licensors from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees and costs) arising out of or in connection with: (a) Customer's use of the Program in violation of these Terms; (b) Customer's violation of any applicable law or regulation; (c) any data or content uploaded to the Program by Customer or its Authorized Users; or (d) any allegation that Customer's use of the Program infringes or misappropriates the intellectual property rights of any third party.</p>
+
+    <!-- Section 10 -->
+    <h2>10. Confidential Information</h2>
+    <p>"Confidential Information" means any information disclosed by either party to the other party, directly or indirectly, in writing, orally, or by inspection of tangible objects, that is designated as "Confidential," "Proprietary," or some similar designation, or that the receiving party knows or reasonably should know is confidential. Confidential Information includes, but is not limited to:</p>
+    <ol type="a">
+      <li>The terms and conditions of these Terms, including pricing;</li>
+      <li>Business plans, strategies, forecasts, and financial information;</li>
+      <li>Technical data, trade secrets, know-how, and proprietary algorithms;</li>
+      <li>Customer Data and any analysis or results derived therefrom.</li>
+    </ol>
+    <p>Confidential Information does not include information that:</p>
+    <ol type="i">
+      <li>Is or becomes publicly available through no fault of the receiving party;</li>
+      <li>Was known to the receiving party prior to disclosure without restriction on disclosure;</li>
+      <li>Is independently developed by the receiving party without use of or reference to the disclosing party's Confidential Information;</li>
+      <li>Is rightfully received from a third party without restriction on disclosure.</li>
+    </ol>
+    <p>Each party agrees to protect the other party's Confidential Information using the same degree of care it uses to protect its own confidential information, but in no event less than a reasonable degree of care. Neither party shall use the other party's Confidential Information for any purpose other than to exercise its rights and perform its obligations under these Terms.</p>
+
+    <!-- Section 11 -->
+    <h2>11. Suspension and Termination</h2>
+    <p>CytoPixel may suspend or terminate Customer's access to the Program under any of the following circumstances:</p>
+    <ol type="a">
+      <li>Customer breaches any material term of these Terms and fails to cure such breach within fifteen (15) days after receiving written notice thereof;</li>
+      <li>Customer fails to pay any fees when due and such failure continues for fifteen (15) days after receiving written notice thereof;</li>
+      <li>CytoPixel reasonably believes that Customer's use of the Program poses a security risk to the Program or any third party, or may subject CytoPixel to liability;</li>
+      <li>Customer becomes the subject of a petition in bankruptcy or any proceeding relating to insolvency, receivership, liquidation, or assignment for the benefit of creditors.</li>
+    </ol>
+    <p>Upon termination, Customer's right to access and use the Program shall immediately cease. Sections 6.2, 7, 8, 9, 10, and 13 shall survive any termination or expiration of these Terms.</p>
+
+    <!-- Section 12 -->
+    <h2>12. Modifications to Terms</h2>
+    <p>CytoPixel reserves the right to modify these Terms at any time. CytoPixel will provide Customer with at least thirty (30) days' prior written notice of any material changes to these Terms by posting the updated Terms on its website or by sending notice to the email address associated with Customer's account. Customer's continued use of the Program after the effective date of any such modifications shall constitute Customer's acceptance of the modified Terms. If Customer does not agree to any modification, Customer must discontinue use of the Program before the effective date of the modification.</p>
+
+    <!-- Section 13 -->
+    <h2>13. Governing Law and Jurisdiction</h2>
+    <p>These Terms shall be governed by and construed in accordance with the laws of the State of Delaware, United States, without regard to its conflict of laws principles. Any legal action or proceeding arising out of or relating to these Terms shall be instituted exclusively in the federal or state courts located in the State of Delaware, and each party irrevocably consents to the exclusive jurisdiction and venue of such courts. The parties expressly exclude the application of the United Nations Convention on Contracts for the International Sale of Goods.</p>
+
+    <!-- Section 14 -->
+    <h2>14. Contact Information</h2>
+    <p>If you have any questions about these Terms, please contact us at:</p>
+    <p>CytoPixel Software<br>
+    Email: <a href="mailto:support@cytopixel.com">support@cytopixel.com</a></p>
+
+    <!-- Closing -->
+    <p class="legal-closing">By using the Program, Customer acknowledges that it has read these Terms, understood them, and agrees to be bound by them.</p>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">&copy; 2026 CytoPixel Software</div>
+    <ul class="footer-links">
+      <li><a href="/terms-of-service">Terms of Service</a></li>
+      <li><a href="/privacy-policy">Privacy Policy</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="mailto:support@cytopixel.com">support@cytopixel.com</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll effect
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // Mobile nav toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    const spans = navToggle.querySelectorAll('span');
+    const isOpen = navLinks.classList.contains('open');
+    spans[0].style.transform = isOpen ? 'rotate(45deg) translate(5px, 5px)' : '';
+    spans[1].style.opacity = isOpen ? '0' : '1';
+    spans[2].style.transform = isOpen ? 'rotate(-45deg) translate(5px, -5px)' : '';
+  });
+</script>
+</body>
+</html>
