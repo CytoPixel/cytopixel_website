@@ -9,49 +9,35 @@
 <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0C0E12;
-    --surface: #141820;
-    --card: #1A1F2A;
+    --bg: #ffffff;
+    --heading: #061b31;
+    --body: #64748d;
+    --label: #273951;
     --accent: #3ECFB4;
     --accent-hover: #2EB89E;
-    --accent-glow: rgba(62, 207, 180, 0.12);
-    --text: #E8ECF1;
-    --text-secondary: rgba(232, 236, 241, 0.55);
-    --border: rgba(255, 255, 255, 0.06);
-    --font-display: 'Playfair Display', Georgia, serif;
-    --font-body: 'Sora', -apple-system, sans-serif;
+    --accent-light: rgba(62, 207, 180, 0.08);
+    --border: #e5edf5;
+    --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     --max-width: 1120px;
+    --shadow-subtle: rgba(50,50,93,0.06) 0px 3px 6px;
   }
 
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: var(--font-body);
-    color: var(--text);
+    font-family: var(--font);
+    color: var(--body);
     background: var(--bg);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
 
-  /* ─── NOISE OVERLAY ─── */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    pointer-events: none;
-    opacity: 0.03;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-repeat: repeat;
-    background-size: 256px 256px;
-  }
-
-  /* ─── NAV ─── */
+  /* NAV */
   nav {
     position: fixed;
     top: 0;
@@ -59,44 +45,32 @@
     right: 0;
     z-index: 100;
     padding: 0 clamp(24px, 4vw, 48px);
-    height: 72px;
+    height: 64px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgba(12, 14, 18, 0.7);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
-    transition: background 0.3s;
+    transition: box-shadow 0.3s;
   }
 
   nav.scrolled {
-    background: rgba(12, 14, 18, 0.95);
+    box-shadow: var(--shadow-subtle);
   }
 
   .nav-logo {
     text-decoration: none;
-    color: var(--text);
-    font-family: var(--font-body);
-    font-size: 1.2rem;
+    color: var(--heading);
+    font-family: var(--font);
+    font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: -0.02em;
     display: flex;
     align-items: center;
     gap: 8px;
   }
-
-  .nav-logo-mark {
-    width: 28px;
-    height: 28px;
-    background: var(--accent);
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .nav-logo-mark svg { width: 16px; height: 16px; }
 
   .nav-links {
     display: flex;
@@ -107,13 +81,13 @@
 
   .nav-links a {
     text-decoration: none;
-    color: var(--text-secondary);
+    color: var(--body);
     font-size: 0.875rem;
-    font-weight: 400;
+    font-weight: 500;
     transition: color 0.2s;
   }
 
-  .nav-links a:hover { color: var(--text); }
+  .nav-links a:hover { color: var(--heading); }
 
   .nav-toggle {
     display: none;
@@ -129,65 +103,69 @@
     display: block;
     width: 22px;
     height: 2px;
-    background: var(--text);
+    background: var(--heading);
     border-radius: 1px;
     transition: transform 0.3s, opacity 0.3s;
   }
 
-  /* ─── LEGAL CONTENT ─── */
+  /* LEGAL CONTENT */
   .legal-page {
     padding: 140px clamp(24px, 4vw, 48px) 100px;
   }
 
   .legal-inner {
-    max-width: 800px;
+    max-width: 720px;
     margin: 0 auto;
   }
 
   .legal-inner h1 {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 4vw, 2.75rem);
-    font-weight: 400;
-    line-height: 1.2;
+    font-family: var(--font);
+    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+    font-weight: 300;
+    line-height: 1.25;
+    letter-spacing: -0.64px;
+    color: var(--heading);
     margin-bottom: 8px;
   }
 
   .legal-subtitle {
-    font-family: var(--font-display);
-    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-family: var(--font);
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
     font-weight: 400;
     color: var(--accent);
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
 
   .legal-updated {
     font-size: 0.85rem;
-    color: var(--text-secondary);
-    font-weight: 300;
-    margin-bottom: 48px;
-    padding-bottom: 32px;
+    color: var(--body);
+    font-weight: 400;
+    margin-bottom: 40px;
+    padding-bottom: 28px;
     border-bottom: 1px solid var(--border);
   }
 
   .legal-notice {
-    background: var(--card);
+    background: #f8fafc;
     border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 28px 32px;
-    margin-bottom: 48px;
-    font-size: 0.85rem;
+    border-radius: 6px;
+    padding: 24px 28px;
+    margin-bottom: 40px;
+    font-size: 0.825rem;
     line-height: 1.8;
     font-weight: 500;
+    color: var(--label);
     letter-spacing: 0.01em;
   }
 
   .legal-inner h2 {
-    font-family: var(--font-display);
-    font-size: 1.4rem;
-    font-weight: 400;
-    margin-top: 48px;
-    margin-bottom: 16px;
-    padding-top: 32px;
+    font-family: var(--font);
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--heading);
+    margin-top: 44px;
+    margin-bottom: 14px;
+    padding-top: 28px;
     border-top: 1px solid var(--border);
   }
 
@@ -197,39 +175,40 @@
   }
 
   .legal-inner h3 {
-    font-family: var(--font-body);
-    font-size: 1rem;
+    font-family: var(--font);
+    font-size: 0.95rem;
     font-weight: 500;
-    margin-top: 28px;
-    margin-bottom: 12px;
-    color: var(--accent);
+    margin-top: 24px;
+    margin-bottom: 10px;
+    color: var(--label);
   }
 
   .legal-inner p {
-    color: var(--text-secondary);
+    color: var(--body);
     font-size: 0.9rem;
     line-height: 1.85;
-    font-weight: 300;
-    margin-bottom: 16px;
+    font-weight: 400;
+    margin-bottom: 14px;
   }
 
   .legal-inner ul, .legal-inner ol {
-    color: var(--text-secondary);
+    color: var(--body);
     font-size: 0.9rem;
     line-height: 1.85;
-    font-weight: 300;
-    margin-bottom: 16px;
+    font-weight: 400;
+    margin-bottom: 14px;
     padding-left: 24px;
   }
 
   .legal-inner li {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
 
   .legal-inner .caps-text {
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 0.01em;
+    font-size: 0.825rem;
   }
 
   .legal-inner a {
@@ -243,15 +222,15 @@
   }
 
   .legal-closing {
-    margin-top: 48px;
-    padding-top: 32px;
+    margin-top: 44px;
+    padding-top: 28px;
     border-top: 1px solid var(--border);
     font-style: italic;
   }
 
-  /* ─── FOOTER ─── */
+  /* FOOTER */
   footer {
-    padding: 48px clamp(24px, 4vw, 48px);
+    padding: 40px clamp(24px, 4vw, 48px);
     border-top: 1px solid var(--border);
     background: var(--bg);
   }
@@ -267,9 +246,9 @@
   }
 
   .footer-brand {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    font-weight: 300;
+    font-size: 0.825rem;
+    color: var(--body);
+    font-weight: 400;
   }
 
   .footer-links {
@@ -281,15 +260,15 @@
 
   .footer-links a {
     text-decoration: none;
-    color: var(--text-secondary);
-    font-size: 0.825rem;
-    font-weight: 400;
+    color: var(--body);
+    font-size: 0.8rem;
+    font-weight: 500;
     transition: color 0.2s;
   }
 
-  .footer-links a:hover { color: var(--text); }
+  .footer-links a:hover { color: var(--heading); }
 
-  /* ─── REDUCED MOTION ─── */
+  /* REDUCED MOTION */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
@@ -299,17 +278,17 @@
     html { scroll-behavior: auto; }
   }
 
-  /* ─── RESPONSIVE ─── */
+  /* RESPONSIVE */
   @media (max-width: 768px) {
     .nav-links { display: none; }
     .nav-links.open {
       display: flex;
       flex-direction: column;
       position: absolute;
-      top: 72px;
+      top: 64px;
       left: 0;
       right: 0;
-      background: rgba(12, 14, 18, 0.97);
+      background: rgba(255, 255, 255, 0.97);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       padding: 24px;
@@ -337,10 +316,11 @@
 <!-- NAV -->
 <nav>
   <a href="/" class="nav-logo">
-    <img src="../assets/favicon-32.png" alt="" class="nav-logo-img" style="width:28px;height:28px;border-radius:6px;">
+    <img src="../assets/favicon-32.png" alt="" style="width:28px;height:28px;border-radius:4px;">
     CytoPixel
   </a>
   <ul class="nav-links">
+    <li><a href="/#products">Products</a></li>
     <li><a href="/contact">Contact</a></li>
     <li><a href="/terms-of-service">Terms</a></li>
     <li><a href="/privacy-policy">Privacy</a></li>
@@ -409,10 +389,10 @@
     <h2>5. Fees, Term and Payment</h2>
 
     <h3>5.1 Fees</h3>
-    <p>Customer shall pay all fees specified in the applicable Service Order or pricing schedule. Fees are based on the level of access and usage selected by the Customer and are non-refundable except as expressly set forth in these Terms. CytoPixel reserves the right to modify its fees upon thirty (30) days' prior written notice to Customer, provided that such modified fees shall apply only to subsequent renewal terms.</p>
+    <p>Customer shall pay all fees specified in the applicable Service Order or pricing schedule. Fees are based on the level of access and usage selected by the Customer and are non-cancelable and non-refundable except as expressly set forth in these Terms. CytoPixel reserves the right to modify its fees upon thirty (30) days' prior written notice to Customer, provided that such modified fees shall apply only to subsequent renewal terms.</p>
 
     <h3>5.2 Subscription Term</h3>
-    <p>The initial subscription term shall be as specified in the applicable Service Order. Unless either party provides written notice of non-renewal at least thirty (30) days prior to the expiration of the then-current term, the subscription shall automatically renew for successive periods equal to the initial term, at the then-current fees.</p>
+    <p>The initial subscription term shall be as specified in the applicable Service Order. Unless either party provides written notice of non-renewal at least thirty (30) days prior to the expiration of the then-current term, the subscription shall automatically renew for successive annual periods at the then-current fees.</p>
 
     <h3>5.3 Payment Terms</h3>
     <p>All fees are due and payable in accordance with the payment terms set forth in the applicable Service Order. If no payment terms are specified, all fees shall be due within thirty (30) days of the invoice date. Late payments shall accrue interest at the rate of one and one-half percent (1.5%) per month, or the maximum rate permitted by applicable law, whichever is less.</p>
@@ -430,7 +410,7 @@
     <p>Customer retains all right, title, and interest in and to all data, images, files, and other content uploaded to the Program by Customer or its Authorized Users ("Customer Data"). CytoPixel shall not access, use, or disclose Customer Data except as necessary to provide and maintain the Program, comply with applicable law, or as otherwise authorized by Customer in writing.</p>
 
     <h3>6.3 Customer Data Access</h3>
-    <p>Customer may export or retrieve its Customer Data from the Program at any time during the term of the subscription. Upon termination or expiration of the subscription, CytoPixel shall, at Customer's request, make Customer Data available for export for a period of thirty (30) days. After such period, CytoPixel may delete Customer Data in accordance with its standard data retention policies.</p>
+    <p>CytoPixel's access to Customer Data is limited to what is necessary to provide, maintain, and improve the Program. Customer may export or retrieve its Customer Data from the Program at any time during the term of the subscription. Upon termination or expiration of the subscription, CytoPixel shall, at Customer's request, make Customer Data available for export for a period of thirty (30) days. After such period, CytoPixel may delete Customer Data in accordance with its standard data retention policies.</p>
 
     <h3>6.4 Breach Notification</h3>
     <p>In the event that CytoPixel becomes aware of any unauthorized access to or disclosure of Customer Data ("Security Breach"), CytoPixel shall promptly notify Customer of the Security Breach, take commercially reasonable steps to mitigate the effects of the Security Breach, and cooperate with Customer in investigating and remediating the Security Breach. Such notification shall be made without unreasonable delay and in no event later than seventy-two (72) hours after CytoPixel becomes aware of the Security Breach.</p>
@@ -446,7 +426,7 @@
     <p class="caps-text">TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL CYTOPIXEL, ITS AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, OR LICENSORS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO DAMAGES FOR LOSS OF PROFITS, GOODWILL, DATA, USE, OR OTHER INTANGIBLE LOSSES, ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OR THE USE OF OR INABILITY TO USE THE PROGRAM, WHETHER BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY, OR ANY OTHER LEGAL THEORY, EVEN IF CYTOPIXEL HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
 
     <h3>8.2 Cap on Liability</h3>
-    <p class="caps-text">TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, CYTOPIXEL'S TOTAL CUMULATIVE LIABILITY ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OR THE USE OF THE PROGRAM SHALL NOT EXCEED THE TOTAL AMOUNT OF FEES PAID BY CUSTOMER TO CYTOPIXEL DURING THE TWELVE (12) MONTH PERIOD IMMEDIATELY PRECEDING THE EVENT GIVING RISE TO THE CLAIM. THE FOREGOING LIMITATIONS SHALL APPLY NOTWITHSTANDING ANY FAILURE OF ESSENTIAL PURPOSE OF ANY LIMITED REMEDY AND SHALL APPLY EVEN IF A PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+    <p class="caps-text">TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, CYTOPIXEL'S TOTAL CUMULATIVE LIABILITY ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OR THE USE OF THE PROGRAM SHALL NOT EXCEED THE TOTAL AMOUNT OF FEES PAID BY CUSTOMER TO CYTOPIXEL DURING THE SIX (6) MONTH PERIOD IMMEDIATELY PRECEDING THE EVENT GIVING RISE TO THE CLAIM. THE FOREGOING LIMITATIONS SHALL APPLY NOTWITHSTANDING ANY FAILURE OF ESSENTIAL PURPOSE OF ANY LIMITED REMEDY AND SHALL APPLY EVEN IF A PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
 
     <!-- Section 9 -->
     <h2>9. Indemnification</h2>
@@ -504,7 +484,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-brand">&copy; 2026 CytoPixel Software</div>
+    <div class="footer-brand">CytoPixel Software</div>
     <ul class="footer-links">
       <li><a href="/terms-of-service">Terms of Service</a></li>
       <li><a href="/privacy-policy">Privacy Policy</a></li>
