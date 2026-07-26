@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terms of Service — CytoPixel Software</title>
-<meta name="description" content="CytoPixel NimbusImage Terms of Service. Read the terms governing your use of the NimbusImage cloud-based image analysis platform.">
+<meta name="description" content="Terms of service for CytoPixel Software products, including the NimbusImage cloud-based image analysis platform and the Memex Desktop application.">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -158,6 +158,12 @@
     letter-spacing: 0.01em;
   }
 
+  .legal-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 64px 0;
+  }
+
   .legal-inner h2 {
     font-family: var(--font);
     font-size: 1.2rem;
@@ -170,6 +176,13 @@
   }
 
   .legal-inner h2:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  /* :first-of-type only matches once per page, so the opening h2 of a second
+     product needs this to match the first product's opening h2. */
+  .legal-inner h2.product-start {
     border-top: none;
     padding-top: 0;
   }
@@ -477,6 +490,141 @@
 
     <!-- Closing -->
     <p class="legal-closing">By using the Program, Customer acknowledges that it has read these Terms, understood them, and agrees to be bound by them.</p>
+
+
+    <!-- PART 2: MEMEX DESKTOP TERMS OF USE -->
+
+    <hr class="legal-divider">
+
+    <h1>Memex Desktop Terms of Use</h1>
+    <p class="legal-updated">Version 1.0 &middot; Last Updated: July 26, 2026</p>
+
+    <div class="legal-notice">
+      PLEASE READ THESE TERMS OF USE ("TERMS") CAREFULLY BEFORE INSTALLING OR USING THE MEMEX DESKTOP APPLICATION ("SOFTWARE"). INSTALLING OR USING THE SOFTWARE SIGNIFIES YOUR AGREEMENT TO BE BOUND BY THESE TERMS. IF YOU DO NOT AGREE TO THESE TERMS, DO NOT INSTALL OR USE THE SOFTWARE.
+    </div>
+
+    <!-- Section 1 -->
+    <h2 class="product-start">1. About These Terms and the Software</h2>
+    <p>CytoPixel Software LLC ("CytoPixel," "we," "us," or "our") publishes Memex Desktop, an application you install and run on your own computer. The Software organizes a folder of your own files (a "vault") and lets an artificial intelligence agent read from and write to that folder on your behalf.</p>
+    <p>The Software is not a hosted service. CytoPixel operates no servers for it, provides no accounts or credentials for it, and does not receive, store, or process the contents of your vault. These Terms govern your use of the Software itself. They are an agreement between you and CytoPixel only.</p>
+    <p>"You" means the individual or entity installing or using the Software. If you are using the Software on behalf of an organization, you represent that you have authority to bind that organization to these Terms.</p>
+
+    <!-- Section 2 -->
+    <h2>2. License and Ownership</h2>
+    <p>Subject to your compliance with these Terms, CytoPixel grants you a limited, non-exclusive, non-transferable, revocable right to install and use the Software for your own purposes, personal or commercial. No fee is charged for this right.</p>
+    <p>The source code for Memex is separately published under the MIT License. <strong>These Terms govern the packaged application distributed by CytoPixel; nothing in these Terms limits, conditions, or revokes any right granted to you under the MIT License with respect to the source code.</strong> If a provision of these Terms conflicts with the MIT License as applied to the source code, the MIT License controls as to the source code, and these Terms continue to govern the packaged application.</p>
+    <p>CytoPixel, its contributors, and its licensors retain all right, title, and interest in and to their respective contributions to the Software, including all intellectual property rights therein. The Software includes components owned by third parties and licensed separately, as described in Section 5. Nothing in these Terms transfers ownership of the Software or any component of it to you.</p>
+
+    <!-- Section 3 -->
+    <h2>3. Trademarks</h2>
+    <p>The MIT License grants no rights in names, logos, or trademarks. "Memex," "CytoPixel," "NimbusImage," and the associated logos and designs are marks of CytoPixel Software LLC. Nothing in these Terms or in the MIT License grants you the right to use those marks, including to name, brand, or promote a modified or derivative version of the Software, or to suggest that CytoPixel endorses or is affiliated with any product or distribution that is not ours.</p>
+
+    <!-- Section 4 -->
+    <h2>4. How Memex Works: Anthropic and Your Data</h2>
+    <p><strong>This section describes the most important thing to understand about the Software. Please read it.</strong></p>
+    <p>The Software operates by sending information to Anthropic, PBC ("Anthropic") using your own Anthropic or Claude account. That information includes the text you type into the Software and <strong>the contents of files in your vault</strong> that the agent reads while working on your requests. The agent decides which files to read in order to answer you, so any information you place in a vault may be transmitted to Anthropic.</p>
+    <p>Your relationship with Anthropic is directly between you and Anthropic. Anthropic's agreements govern that information, including how long Anthropic retains it and the purposes for which Anthropic may use it:</p>
+    <ul>
+      <li><a href="https://www.anthropic.com/legal/commercial-terms">Anthropic Commercial Terms</a> (Team, Enterprise, and Claude API users)</li>
+      <li><a href="https://www.anthropic.com/legal/consumer-terms">Anthropic Consumer Terms of Service</a> (Free, Pro, and Max users)</li>
+      <li><a href="https://www.anthropic.com/legal/privacy">Anthropic Privacy Policy</a></li>
+      <li><a href="https://www.anthropic.com/legal/aup">Anthropic Usage Policy</a></li>
+    </ul>
+    <p><strong>CytoPixel is not a party to your agreement with Anthropic.</strong> We do not receive that information, cannot access it, cannot control how it is used or how long it is kept, and cannot delete it or retrieve it for you. Requests about information you have sent to Anthropic must be directed to Anthropic.</p>
+    <p>You are responsible for reviewing Anthropic's agreements and for deciding whether they are acceptable for the information you place in a vault.</p>
+
+    <!-- Section 5 -->
+    <h2>5. Third-Party Components and Accounts</h2>
+    <p>The Software includes and depends on software licensed by Anthropic, including the Claude Agent SDK and a bundled Claude command-line program. Your use of those components is subject to Anthropic's agreements listed in Section 4 and to Anthropic's <a href="https://code.claude.com/docs/en/legal-and-compliance">legal and compliance terms for Claude Code</a>. Those components are owned by Anthropic and are not licensed to you under the MIT License.</p>
+    <p>Using the Software requires your own Anthropic or Claude account. You are responsible for obtaining and maintaining that account in good standing, for all activity conducted under it, for any charges or usage limits that apply to it, for complying with Anthropic's Usage Policy, and for using an authentication method that Anthropic permits for your plan. CytoPixel does not provide, resell, or administer Anthropic accounts, and does not guarantee that any particular Anthropic plan, model, or authentication method will remain available or continue to work with the Software.</p>
+    <p>The Software may also connect to other services at your direction, such as pages you choose to display in the Software or connectors you enable in your own Anthropic account. Your use of those services is governed by their own terms.</p>
+
+    <!-- Section 6 -->
+    <h2>6. Autonomous Operation; Your Responsibilities</h2>
+    <p>You acknowledge and agree that:</p>
+    <ol type="a">
+      <li><strong>The agent acts on your files.</strong> The Software creates, modifies, moves, renames, and deletes files within your vault directory without asking you to confirm each change. Some operations — including running shell commands and reaching outside the vault — prompt you for approval, and you may grant standing approval for them.</li>
+      <li><strong>You are responsible for backups.</strong> The Software is not a backup system and provides no undo guarantee. You are solely responsible for maintaining independent backups of anything in your vault that you cannot afford to lose. This is particularly important for any directory you designate as a vault that already contains files you care about.</li>
+      <li><strong>Output may be wrong.</strong> Artificial intelligence systems produce inaccurate, incomplete, and fabricated output. The Software may misinterpret your files, misrepresent their contents, act on a mistaken understanding of your request, or generate text that appears authoritative but is false. You are responsible for reviewing the agent's actions and verifying its output before relying on it.</li>
+      <li><strong>Output is not professional advice.</strong> Nothing produced by the Software is medical, legal, financial, tax, or other professional advice, and it is not a substitute for consultation with a qualified professional.</li>
+      <li><strong>You are responsible for what you put in a vault.</strong> You decide which files the agent can reach. You represent that you have the right to place that content in a vault and to have it transmitted to Anthropic as described in Section 4.</li>
+    </ol>
+
+    <!-- Section 7 -->
+    <h2>7. Prohibited Data and Uses</h2>
+    <p>You shall not use the Software to store, process, or transmit:</p>
+    <ol type="a">
+      <li><strong>Protected health information.</strong> Protected health information ("PHI") as defined under the Health Insurance Portability and Accountability Act ("HIPAA"), or any individually identifiable health information. Anthropic covers PHI only where the customer has executed a Business Associate Agreement with Anthropic and has Zero Data Retention enabled for its organization. Individual users of the Software will not have that coverage, and CytoPixel is in no case a business associate with respect to your use of the Software.</li>
+      <li><strong>Identifiable patient or research-subject information.</strong> Any personally identifiable information of patients or human research subjects, whether or not it constitutes PHI.</li>
+      <li><strong>Data you are not permitted to disclose to a third-party artificial intelligence provider.</strong> Any information whose transmission to Anthropic would breach applicable law, a contract or confidentiality obligation, an institutional review board protocol or informed consent document, the Family Educational Rights and Privacy Act ("FERPA"), export control regulations, or any similar restriction. Because the agent reads the files in your vault, placing such information in a vault is a transmission of it.</li>
+    </ol>
+    <p>You further shall not:</p>
+    <ol type="a" start="4">
+      <li>rely on the Software for clinical, diagnostic, or treatment purposes, or for any purpose where inaccurate output could result in personal injury, death, or damage to property or the environment;</li>
+      <li>use the Software in violation of any applicable law or regulation, or in violation of Anthropic's Usage Policy, or to circumvent any restriction, usage limit, or authentication requirement imposed by Anthropic;</li>
+      <li>use the Software to infringe or misappropriate the intellectual property or privacy rights of any third party.</li>
+    </ol>
+    <p>The Software has no ability to inspect or enforce these restrictions, and CytoPixel does not monitor your use of it. Compliance is entirely your responsibility.</p>
+
+    <!-- Section 8 -->
+    <h2>8. Software Updates</h2>
+    <p>The Software checks for updates by contacting GitHub, and may download and install updated versions. Updates may add, change, or remove functionality. Continued use of the Software after an update constitutes acceptance of that version. CytoPixel is under no obligation to provide updates, support, maintenance, or bug fixes, or to continue publishing the Software at all.</p>
+
+    <!-- Section 9 -->
+    <h2>9. Disclaimer of Warranties</h2>
+    <p class="caps-text">THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. CYTOPIXEL DOES NOT WARRANT THAT THE SOFTWARE WILL MEET YOUR REQUIREMENTS, THAT ITS OPERATION WILL BE UNINTERRUPTED OR ERROR-FREE, THAT DEFECTS WILL BE CORRECTED, THAT IT IS FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS, OR THAT ANY OUTPUT IT PRODUCES WILL BE ACCURATE, COMPLETE, OR RELIABLE.</p>
+    <p class="caps-text">CYTOPIXEL SPECIFICALLY DISCLAIMS ALL LIABILITY FOR LOSS, CORRUPTION, DELETION, OR MODIFICATION OF YOUR FILES, AND FOR ANY DISCLOSURE OF INFORMATION YOU PLACE IN A VAULT. YOU ASSUME THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE SOFTWARE AND AS TO ANY ACTION THE AGENT TAKES ON YOUR FILES.</p>
+    <p class="caps-text">THE SOFTWARE IS NOT INTENDED FOR USE IN CLINICAL OR DIAGNOSTIC SETTINGS, AND CYTOPIXEL DISCLAIMS ALL LIABILITY ARISING FROM ANY SUCH USE. NO INFORMATION OR ADVICE GIVEN BY CYTOPIXEL OR ITS REPRESENTATIVES SHALL CREATE A WARRANTY.</p>
+    <p class="caps-text">CYTOPIXEL MAKES NO WARRANTY OR REPRESENTATION WHATSOEVER REGARDING ANTHROPIC OR ANY OTHER THIRD-PARTY SERVICE, INCLUDING ITS AVAILABILITY, ITS PRICING, ITS HANDLING OF YOUR INFORMATION, OR ITS CONTINUED COMPATIBILITY WITH THE SOFTWARE.</p>
+
+    <!-- Section 10 -->
+    <h2>10. Limitation of Liability</h2>
+
+    <h3>10.1 Limitation of Damages</h3>
+    <p class="caps-text">TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL CYTOPIXEL, ITS AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, CONTRIBUTORS, OR LICENSORS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO DAMAGES FOR LOSS OF PROFITS, GOODWILL, DATA, FILES, RESEARCH, USE, OR OTHER INTANGIBLE LOSSES, ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OR THE USE OF OR INABILITY TO USE THE SOFTWARE, WHETHER BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY, OR ANY OTHER LEGAL THEORY, EVEN IF CYTOPIXEL HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+
+    <h3>10.2 Cap on Liability</h3>
+    <p class="caps-text">TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, CYTOPIXEL'S TOTAL CUMULATIVE LIABILITY ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OR THE USE OF THE SOFTWARE SHALL NOT EXCEED THE GREATER OF (A) THE TOTAL AMOUNT OF FEES YOU HAVE PAID TO CYTOPIXEL FOR THE SOFTWARE, IF ANY, OR (B) ONE HUNDRED UNITED STATES DOLLARS (US$100). THE FOREGOING LIMITATIONS SHALL APPLY NOTWITHSTANDING ANY FAILURE OF ESSENTIAL PURPOSE OF ANY LIMITED REMEDY AND SHALL APPLY EVEN IF A PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+
+    <h3>10.3 Third-Party Services</h3>
+    <p class="caps-text">CYTOPIXEL SHALL HAVE NO LIABILITY WHATSOEVER ARISING OUT OF OR IN CONNECTION WITH ANTHROPIC OR ANY OTHER THIRD-PARTY SERVICE, INCLUDING ANY ACT OR OMISSION OF ANTHROPIC, ANY USE OR RETENTION OF YOUR INFORMATION BY ANTHROPIC, ANY SUSPENSION OR TERMINATION OF YOUR ANTHROPIC ACCOUNT, ANY CHANGE TO ANTHROPIC'S TERMS, PRICING, MODELS, OR AUTHENTICATION REQUIREMENTS, OR ANY INTERRUPTION OF ANTHROPIC'S SERVICES.</p>
+
+    <!-- Section 11 -->
+    <h2>11. Indemnification</h2>
+    <p>You agree to indemnify, defend, and hold harmless CytoPixel, its affiliates, officers, directors, employees, agents, contributors, and licensors from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees and costs) arising out of or in connection with: (a) your use of the Software in violation of these Terms; (b) your violation of any applicable law or regulation, or of Anthropic's terms or Usage Policy; (c) any content you place in a vault or otherwise transmit through the Software, including any content prohibited by Section 7; or (d) any allegation that your use of the Software infringes or misappropriates the intellectual property rights of any third party.</p>
+
+    <!-- Section 12 -->
+    <h2>12. Term and Termination</h2>
+    <p>These Terms take effect when you first install or use the Software and continue until terminated.</p>
+    <p>You may terminate these Terms at any time by ceasing all use of the Software and uninstalling it. No fees are charged and none are refundable. Uninstalling the Software does not delete your vault, which remains on your computer, and does not affect information already transmitted to Anthropic.</p>
+    <p>CytoPixel may terminate the rights granted in these Terms if you materially breach them. Upon termination, your right to use the Software immediately ceases.</p>
+    <p>Sections 2, 3, 4, 7, 9, 10, 11, 14, and 15 survive any termination of these Terms.</p>
+
+    <!-- Section 13 -->
+    <h2>13. Changes to These Terms</h2>
+    <p>CytoPixel may modify these Terms. When we do, we will update the version and effective date of these Terms, publish the updated Terms on our website, and present them to you in the Software. Your continued use of the Software after being presented with updated Terms constitutes acceptance of them. If you do not agree to the updated Terms, you must stop using the Software and uninstall it. Because the Software runs entirely on your computer and we hold no account or contact information for you, presenting the updated Terms in the Software is our method of notifying you.</p>
+
+    <!-- Section 14 -->
+    <h2>14. Governing Law and Jurisdiction</h2>
+    <p>These Terms shall be governed by and construed in accordance with the laws of the State of Delaware, United States, without regard to its conflict of laws principles. Any legal action or proceeding arising out of or relating to these Terms shall be instituted exclusively in the federal or state courts located in the State of Delaware, and each party irrevocably consents to the exclusive jurisdiction and venue of such courts. The parties expressly exclude the application of the United Nations Convention on Contracts for the International Sale of Goods.</p>
+
+    <!-- Section 15 -->
+    <h2>15. General</h2>
+    <p><strong>Entire agreement.</strong> These Terms, together with the Memex Privacy Notice, constitute the entire agreement between you and CytoPixel regarding the Software and supersede all prior understandings regarding it. They do not govern your separate agreements with Anthropic or any other third party.</p>
+    <p><strong>Severability.</strong> If any provision of these Terms is held unenforceable, that provision shall be limited or eliminated to the minimum extent necessary and the remaining provisions shall remain in full force and effect.</p>
+    <p><strong>No waiver.</strong> Our failure to enforce any provision of these Terms shall not constitute a waiver of it.</p>
+    <p><strong>Assignment.</strong> You may not assign or transfer these Terms without our prior written consent. CytoPixel may assign these Terms in connection with a merger, acquisition, or sale of assets.</p>
+    <p><strong>Export compliance.</strong> You represent that you are not located in, and will not use the Software in, any jurisdiction subject to a United States embargo, and that you are not listed on any United States government list of prohibited or restricted parties.</p>
+    <p><strong>Eligibility.</strong> The Software is not directed to children. You represent that you are at least 18 years old, or the age of majority in your jurisdiction if greater.</p>
+
+    <!-- Section 16 -->
+    <h2>16. Contact Information</h2>
+    <p>If you have any questions about these Terms, please contact us at:</p>
+    <p>CytoPixel Software LLC<br>
+    Email: <a href="mailto:support@cytopixel.com">support@cytopixel.com</a></p>
+
+    <!-- Closing -->
+    <p class="legal-closing">By installing or using the Software, you acknowledge that you have read these Terms, understood them, and agree to be bound by them.</p>
 
   </div>
 </main>
